@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta property="og:title" content="AppIndex">
+  <title>App's | &#x767D;&#x6FAA;</title>
+  <link rel="shortcut icon" href="https://lolilin.com/favicon.ico" type="image/x-icon" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: "#da373d",
+          },
+        },
+      },
+    };
+  </script>
+</head>
+
+<body>
+
+  <main style="margin-top: 30px;">
+    <script src="/js/visitors.js"></script><a id="comments"></a>
+  <div id="vcomments" style="margin:0 30px;"></div>
+  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/xcss/valine@latest/dist/Valine.min.js"></script>
+  <script>var valine = new Valine({
+          el: '#vcomments',
+          notify: true || false,
+          verify: true || false,
+          app_id: 'quTYEaWw9jGK5i3AM1WZR6hm-gzGzoHsz',
+          app_key: 'nF0boMYJX9QnOkyq2SkWBm9T',
+          placeholder: '留下你友善的评论(≧∇≦)ﾉ',
+          path: 'AppIndex',
+          serverURLs: '',
+          visitor: true,
+          recordIP: true,
+          avatar: 'mm'
+      })
+      </script>
+  </main>
+
+  <main style="margin: 30px;">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <script>
+      var gitalk = new Gitalk({
+        clientID: '54a9c9d3359e7b7ed2ff',
+        clientSecret: 'c59043f5bf75a2552162fc0aeec909d72883c62c',
+        repo: 'app.lolilin',
+        owner: 'lolilin',
+        admin: ['lolilin'],
+        id: 'AppIndex',      // 请确保你的 location 连接小于 50 个字符，否则，插件会生成失败   
+        distractionFreeMode: false // 专注模式 
+      })
+
+      gitalk.render('gitalk-container')
+    </script>
+  </main>
+
+  <main style="margin:30px">
+    <script src="https://giscus.app/client.js"
+    data-repo="lolilin/app.lolilin"
+    data-repo-id="R_kgDOJfj-7g"
+    data-category="General"
+    data-category-id="DIC_kwDOJfj-7s4CWUH0"
+    data-mapping="og:title"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+  </main>
+  <!-- <main style="margin: 30px;">
+    <script src="https://giscus.app/client.js"
+    data-repo="lolilin/app.lolilin"
+    data-repo-id="R_kgDOJfj-7g"
+    data-category="General"
+    data-category-id="DIC_kwDOJfj-7s4CWUH0"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="top"
+    data-theme="preferred_color_scheme"
+    data-lang="zh-CN"
+    data-loading="lazy"
+    crossorigin="anonymous"
+    async>
+</script>
+  </main> -->
+</body>
+
+</html>
