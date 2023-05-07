@@ -2,101 +2,50 @@
 <html>
 
 <head>
-  <meta property="og:title" content="AppIndex">
-  <title>App's | &#x767D;&#x6FAA;</title>
-  <link rel="shortcut icon" href="https://lolilin.com/favicon.ico" type="image/x-icon" />
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            clifford: "#da373d",
-          },
-        },
-      },
-    };
-  </script>
+    <title>404 Not Found | &#x767D;&#x6FAA;</title>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
 <body>
 
-  <main style="margin-top: 30px;">
-    <script src="/js/visitors.js"></script><a id="comments"></a>
-  <div id="vcomments" style="margin:0 30px;"></div>
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/xcss/valine@latest/dist/Valine.min.js"></script>
-  <script>var valine = new Valine({
-          el: '#vcomments',
-          notify: true || false,
-          verify: true || false,
-          app_id: 'quTYEaWw9jGK5i3AM1WZR6hm-gzGzoHsz',
-          app_key: 'nF0boMYJX9QnOkyq2SkWBm9T',
-          placeholder: '留下你友善的评论(≧∇≦)ﾉ',
-          path: 'AppIndex',
-          serverURLs: '',
-          visitor: true,
-          recordIP: true,
-          avatar: 'mm'
-      })
-      </script>
-  </main>
+    <main style="margin-top: 14vh;">
+        <div class="bg-white py-6 sm:py-8 lg:py-12">
+            <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+                <div class="flex flex-col items-center">
+                    <!-- logo - start -->
+                    <a target="_blank" rel="noopener" href="https://1oli.cn/"
+                        class="text-black-800 mb-8 inline-flex items-center gap-2.5 text-2xl font-bold md:text-3xl"
+                        aria-label="logo">
+                        <img style="width: 55px;margin-bottom: 8px;" src="https://avatars.githubusercontent.com/oa/2190240?s=240&u=62c460c155b850cf6b38b901a1310c67c1df52e2&v=4" alt="">
+                        「白澪~」App
+                    </a>
+                    <!-- logo - end -->
 
-  <main style="margin: 30px;">
-    <div id="gitalk-container"></div>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
-    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
-    <script>
-      var gitalk = new Gitalk({
-        clientID: '54a9c9d3359e7b7ed2ff',
-        clientSecret: 'c59043f5bf75a2552162fc0aeec909d72883c62c',
-        repo: 'app.lolilin',
-        owner: 'lolilin',
-        admin: ['lolilin'],
-        id: 'AppIndex',      // 请确保你的 location 连接小于 50 个字符，否则，插件会生成失败   
-        distractionFreeMode: false // 专注模式 
-      })
+                    <p class="mb-4 text-sm font-semibold uppercase text-red-500 md:text-base">That’s a 404</p>
+                    <h1 class="mb-2 text-center text-2xl font-bold text-gray-800 md:text-3xl">Page not found</h1>
 
-      gitalk.render('gitalk-container')
-    </script>
-  </main>
+                    <p class="mb-12 max-w-screen-md text-center text-gray-500 md:text-lg">The page you’re looking for
+                        doesn’t exist.<a onclick="document.getElementById('dino').classList.toggle('none')" style="margin-left: 10px;cursor: crosshair;" class="underline text-indigo-500">Play game?</a></p>
 
-  <main style="margin:30px">
-    <script src="https://giscus.app/client.js"
-    data-repo="lolilin/app.lolilin"
-    data-repo-id="R_kgDOJfj-7g"
-    data-category="General"
-    data-category-id="DIC_kwDOJfj-7s4CWUH0"
-    data-mapping="og:title"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="top"
-    data-theme="preferred_color_scheme"
-    data-lang="zh-CN"
-    data-loading="lazy"
-    crossorigin="anonymous"
-    async>
-</script>
-  </main>
-  <!-- <main style="margin: 30px;">
-    <script src="https://giscus.app/client.js"
-    data-repo="lolilin/app.lolilin"
-    data-repo-id="R_kgDOJfj-7g"
-    data-category="General"
-    data-category-id="DIC_kwDOJfj-7s4CWUH0"
-    data-mapping="pathname"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="top"
-    data-theme="preferred_color_scheme"
-    data-lang="zh-CN"
-    data-loading="lazy"
-    crossorigin="anonymous"
-    async>
-</script>
-  </main> -->
+                    <style>
+                        .none{
+                            display: none;
+                        }
+                    </style>
+                    <iframe id="dino" class="none" style="
+                        width: 80%;
+                        height: 200px;
+                        margin-top: -50px;
+                        margin-bottom: 50px;
+                    " src="/dino?error=true"></iframe>
+                    
+                    <a href="/"
+                        class="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base">Go
+                    home</a>
+                </div>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
