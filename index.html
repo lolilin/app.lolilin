@@ -2,222 +2,180 @@
 <html>
 
 <head>
-  <meta property="og:title" content="AppIndex">
-  <title>App's | &#x767D;&#x6FAA;</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-  <script>
-    $.ajax({
-      url: 'https://api.mio.ski/app/list',
-      type: 'GET',
-      dataType: 'json',
-    })
-      .done(function (dat) {
-        console.log(dat);
-        let objectApi = dat;
-        for (let item in objectApi) {
-          let objectItem = dat[item];
-          let objectList = $('#List');
-          let objectPrivate = $('#Private');
-          
-          if (objectItem.order >= 1000){
-            if (objectItem.icon == null) {
-              objectPrivate.append('<!-- feature - start --><div class="flex flex-col rounded-lg border p-4 md:p-6"><h3 class="mb-2 text-lg font-semibold md:text-xl">' + objectItem.title + '</h3><p style="display: flex;" class="mb-4 text-gray-500"><span style="margin: 10px;">' + objectItem.describes + '</span></p><a href="' + objectItem.url + '" class="mt-auto font-bold text-pink-500 transition duration-100 hover:text-pink-600 active:text-indigo-700">Open</a></div><!-- feature - end -->');
-            } else objectPrivate.append('<!-- feature - start --><div class="flex flex-col rounded-lg border p-4 md:p-6"><h3 class="mb-2 text-lg font-semibold md:text-xl">' + objectItem.title + '</h3><p style="display: flex;" class="mb-4 text-gray-500"><img style="object-fit:cover;width: 5rem;height: 5rem;" src="' + objectItem.icon + '" alt=""><span style="margin: 10px;">' + objectItem.describes + '</span></p><a href="' + objectItem.url + '" class="mt-auto font-bold text-pink-500 transition duration-100 hover:text-pink-600 active:text-indigo-700">Open</a></div><!-- feature - end -->');
-          }else{
-            if (objectItem.icon == null) {
-            objectList.append('<!-- feature - start --><div class="flex flex-col rounded-lg border p-4 md:p-6"><h3 class="mb-2 text-lg font-semibold md:text-xl">' + objectItem.title + '</h3><p style="display: flex;" class="mb-4 text-gray-500"><span style="margin: 10px;">' + objectItem.describes + '</span></p><a href="' + objectItem.url + '" class="mt-auto font-bold text-pink-500 transition duration-100 hover:text-pink-600 active:text-indigo-700">Open</a></div><!-- feature - end -->');
-            } else objectList.append('<!-- feature - start --><div class="flex flex-col rounded-lg border p-4 md:p-6"><h3 class="mb-2 text-lg font-semibold md:text-xl">' + objectItem.title + '</h3><p style="display: flex;" class="mb-4 text-gray-500"><img style="object-fit:cover;width: 5rem;height: 5rem;" src="' + objectItem.icon + '" alt=""><span style="margin: 10px;">' + objectItem.describes + '</span></p><a href="' + objectItem.url + '" class="mt-auto font-bold text-pink-500 transition duration-100 hover:text-pink-600 active:text-indigo-700">Open</a></div><!-- feature - end -->');
-          }
-        };
-        document.getElementById('load').remove();
-        document.getElementById('main').classList.toggle('hide')
-      })
-      .fail(function () {
-        alert('api server request timed out');
-      });
-  </script>
-  <style>
-    .hide{
-      display: none;
-    }
-  </style>
-  <script>
-    function Github(command) {
-      if (command == 'Signup') {
-        window.open("https://github.com/join?return_to=%2Flogin%2Foauth%2Fauthorize%3Fclient_id%3D54a9c9d3359e7b7ed2ff%26redirect_uri%3Dhttps%253A%252F%252Fapp.lolilin.com%252Fapi%252Foauth%252Fgithub%26scope%3Dpublic_repo&source=oauth", "_blank", "menubar=no,toolbar=no,status=no,scrollbars=yes,top=250,left=450,width=1000px,height=600px")
-      } else if (command == 'Signin') {
-        window.open("https://github.com/login/oauth/authorize?client_id=54a9c9d3359e7b7ed2ff&redirect_uri=https://app.lolilin.com/api/oauth/github&scope=public_repo", "_blank", "menubar=no,toolbar=no,status=no,scrollbars=yes,top=200,left=700,width=600px,height=700px")
-      }
-    }
-  </script>
-  <!-- <link rel="shortcut icon" href="https://app.lolilin.com/static/img/herta.gif" type="image/x-icon"> -->
+    <meta property="og:title" content="AppUrl" />
+    <title>App's | &#x767D;&#x6FAA;</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+
+    <script>
+        function Github(command) {
+            if (command == "Signup") {
+                window.open(
+                    "https://github.com/join?return_to=%2Flogin%2Foauth%2Fauthorize%3Fclient_id%3D54a9c9d3359e7b7ed2ff%26redirect_uri%3Dhttps%253A%252F%252Fapp.lolilin.com%252Fapi%252Foauth%252Fgithub%26scope%3Dpublic_repo&source=oauth",
+                    "_blank",
+                    "menubar=no,toolbar=no,status=no,scrollbars=yes,top=250,left=450,width=1000px,height=600px"
+                );
+            } else if (command == "Signin") {
+                window.open(
+                    "https://github.com/login/oauth/authorize?client_id=54a9c9d3359e7b7ed2ff&redirect_uri=https://app.lolilin.com/api/oauth/github&scope=public_repo",
+                    "_blank",
+                    "menubar=no,toolbar=no,status=no,scrollbars=yes,top=200,left=700,width=600px,height=700px"
+                );
+            }
+        }
+    </script>
+    <!-- <link rel="shortcut icon" href="https://app.lolilin.com/static/img/herta.gif" type="image/x-icon"> -->
 </head>
 
 <body>
-  <load id="load">
-    <div id="reload" style="width: 100%;height: 100vh;position: relative;">
-      <img style="border-radius: 100%;position: absolute;width: 4rem;top: -2rem;left: 0;right: 0;bottom: 0;margin: auto;"
-        src="https://app.lolilin.com/static/img/herta.gif">
-    </div>
-  </load>
+    <section id="main" class="hide d-flex flex-column justify-content-center">
+        <header>
+            <div style="margin: 10px" class="bg-white">
+                <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+                    <header class="flex items-center justify-between py-4 md:py-8">
+                        <!-- logo - start -->
+                        <a href="/"
+                            class="text-black-800 inline-flex items-center gap-2.5 text-2xl font-bold md:text-3xl"
+                            aria-label="logo">
+                            <img style="width: 60px"
+                                src="https://avatars.githubusercontent.com/oa/2190240?s=240&u=62c460c155b850cf6b38b901a1310c67c1df52e2&v=4"
+                                alt="" />
+                            「白澪~」App
+                        </a>
+                        <!-- logo - end -->
 
-  <section id="main" class="hide d-flex flex-column justify-content-center">
-    <header>
-      <div style="margin: 10px;" class="bg-white">
-        <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-          <header class="flex items-center justify-between py-4 md:py-8">
-            <!-- logo - start -->
-            <a href="/" class="text-black-800 inline-flex items-center gap-2.5 text-2xl font-bold md:text-3xl"
-              aria-label="logo">
-              <img style="width: 60px;"
-                src="https://avatars.githubusercontent.com/oa/2190240?s=240&u=62c460c155b850cf6b38b901a1310c67c1df52e2&v=4"
-                alt="">
-              「白澪~」App
-            </a>
-            <!-- logo - end -->
+                        <!-- buttons - start -->
+                        <div
+                            class="-ml-8 hidden flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start">
+                            <a onclick="Github('Signin')"
+                                class="inline-block rounded-lg px-4 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:text-pink-500 focus-visible:ring active:text-indigo-600 md:text-base">Sign
+                                in</a>
 
-            <!-- buttons - start -->
-            <div class="-ml-8 hidden flex-col gap-2.5 sm:flex-row sm:justify-center lg:flex lg:justify-start">
-              <a onclick="Github('Signin')"
-                class="inline-block rounded-lg px-4 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-indigo-300 transition duration-100 hover:text-pink-500 focus-visible:ring active:text-indigo-600 md:text-base">Sign
-                in</a>
+                            <button type="button" onclick="Github('Signup')"
+                                class="inline-flex items-center gap-2 rounded-lg bg-pink-500 px-4 py-3 text-center text-sm font-semibold text-white outline-none ring-pink-300 transition duration-100 hover:bg-pink-600 focus-visible:ring active:bg-pink-700 md:text-base">
+                                <svg t="1683450863172" class="icon" viewBox="0 0 1024 1024" version="1.1"
+                                    xmlns="http://www.w3.org/2000/svg" p-id="1756" width="25" height="25">
+                                    <path
+                                        d="M950.930286 512q0 143.433143-83.748571 257.974857t-216.283429 158.573714q-15.433143 2.852571-22.601143-4.022857t-7.168-17.115429l0-120.539429q0-55.442286-29.696-81.115429 32.548571-3.437714 58.587429-10.313143t53.686857-22.308571 46.299429-38.034286 30.281143-59.977143 11.702857-86.016q0-69.12-45.129143-117.686857 21.138286-52.004571-4.534857-116.589714-16.018286-5.12-46.299429 6.290286t-52.589714 25.161143l-21.723429 13.677714q-53.174857-14.848-109.714286-14.848t-109.714286 14.848q-9.142857-6.290286-24.283429-15.433143t-47.689143-22.016-49.152-7.68q-25.161143 64.585143-4.022857 116.589714-45.129143 48.566857-45.129143 117.686857 0 48.566857 11.702857 85.723429t29.988571 59.977143 46.006857 38.253714 53.686857 22.308571 58.587429 10.313143q-22.820571 20.553143-28.013714 58.88-11.995429 5.705143-25.746286 8.557714t-32.548571 2.852571-37.449143-12.288-31.744-35.693714q-10.825143-18.285714-27.721143-29.696t-28.306286-13.677714l-11.410286-1.682286q-11.995429 0-16.603429 2.56t-2.852571 6.582857 5.12 7.972571 7.460571 6.875429l4.022857 2.852571q12.580571 5.705143 24.868571 21.723429t17.993143 29.110857l5.705143 13.165714q7.460571 21.723429 25.161143 35.108571t38.253714 17.115429 39.716571 4.022857 31.744-1.974857l13.165714-2.267429q0 21.723429 0.292571 50.834286t0.292571 30.866286q0 10.313143-7.460571 17.115429t-22.820571 4.022857q-132.534857-44.032-216.283429-158.573714t-83.748571-257.974857q0-119.442286 58.88-220.306286t159.744-159.744 220.306286-58.88 220.306286 58.88 159.744 159.744 58.88 220.306286z"
+                                        fill="#fff" p-id="1757"></path>
+                                </svg>
 
-              <button type="button" onclick="Github('Signup')"
-                class="inline-flex items-center gap-2 rounded-lg bg-pink-500 px-4 py-3 text-center text-sm font-semibold text-white outline-none ring-pink-300 transition duration-100 hover:bg-pink-600 focus-visible:ring active:bg-pink-700 md:text-base">
-                <svg t="1683450863172" class="icon" viewBox="0 0 1024 1024" version="1.1"
-                  xmlns="http://www.w3.org/2000/svg" p-id="1756" width="25" height="25">
-                  <path
-                    d="M950.930286 512q0 143.433143-83.748571 257.974857t-216.283429 158.573714q-15.433143 2.852571-22.601143-4.022857t-7.168-17.115429l0-120.539429q0-55.442286-29.696-81.115429 32.548571-3.437714 58.587429-10.313143t53.686857-22.308571 46.299429-38.034286 30.281143-59.977143 11.702857-86.016q0-69.12-45.129143-117.686857 21.138286-52.004571-4.534857-116.589714-16.018286-5.12-46.299429 6.290286t-52.589714 25.161143l-21.723429 13.677714q-53.174857-14.848-109.714286-14.848t-109.714286 14.848q-9.142857-6.290286-24.283429-15.433143t-47.689143-22.016-49.152-7.68q-25.161143 64.585143-4.022857 116.589714-45.129143 48.566857-45.129143 117.686857 0 48.566857 11.702857 85.723429t29.988571 59.977143 46.006857 38.253714 53.686857 22.308571 58.587429 10.313143q-22.820571 20.553143-28.013714 58.88-11.995429 5.705143-25.746286 8.557714t-32.548571 2.852571-37.449143-12.288-31.744-35.693714q-10.825143-18.285714-27.721143-29.696t-28.306286-13.677714l-11.410286-1.682286q-11.995429 0-16.603429 2.56t-2.852571 6.582857 5.12 7.972571 7.460571 6.875429l4.022857 2.852571q12.580571 5.705143 24.868571 21.723429t17.993143 29.110857l5.705143 13.165714q7.460571 21.723429 25.161143 35.108571t38.253714 17.115429 39.716571 4.022857 31.744-1.974857l13.165714-2.267429q0 21.723429 0.292571 50.834286t0.292571 30.866286q0 10.313143-7.460571 17.115429t-22.820571 4.022857q-132.534857-44.032-216.283429-158.573714t-83.748571-257.974857q0-119.442286 58.88-220.306286t159.744-159.744 220.306286-58.88 220.306286 58.88 159.744 159.744 58.88 220.306286z"
-                    fill="#fff" p-id="1757"></path>
-                </svg>
+                                Sign up with Github
+                            </button>
+                        </div>
 
-                Sign up with Github
-              </button>
+                        <button type="button"
+                            class="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20"
+                                fill="currentColor">
+                                <path fill-rule="evenodd"
+                                    d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
+                                    clip-rule="evenodd" />
+                            </svg>
+
+                            Menu
+                        </button>
+                        <!-- buttons - end -->
+                    </header>
+                </div>
             </div>
-
-            <button type="button"
-              class="inline-flex items-center gap-2 rounded-lg bg-gray-200 px-2.5 py-2 text-sm font-semibold text-gray-500 ring-indigo-300 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base lg:hidden">
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd"
-                  d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-                  clip-rule="evenodd" />
-              </svg>
-
-              Menu
-            </button>
-            <!-- buttons - end -->
-          </header>
-        </div>
-      </div>
-    </header>
-
-
-    <main style="margin:10px">
-      <div style="margin: 10px;" class="bg-white">
-        <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-          <section
-            class="min-h-96 relative flex flex-1 shrink-0 items-center justify-center overflow-hidden rounded-lg bg-gray-100 py-16 shadow-lg md:py-20 xl:py-48">
-            <!-- image - start -->
-            <div class="absolute inset-0 bg-pink-500 mix-blend-multiply"></div>
-            <img
-              src="https://webstatic.mihoyo.com/upload/op-public/2022/09/14/8b27366bab21aae7b153f05cd372485d_1170204952296497544.png"
-              loading="lazy" alt="Photo by Fakurian Design"
-              class="absolute inset-0 h-full w-full object-cover object-center" />
-            <!-- image - end -->
-
-            <!-- overlay - start -->
-            <div class="absolute inset-0 bg-indigo-500 mix-blend-multiply"></div>
-            <!-- overlay - end -->
-
-            <!-- text start -->
-            <div class="relative flex flex-col items-center p-4 sm:max-w-xl">
-              <p class="mb-4 text-center text-lg text-pink-200 sm:text-xl md:mb-8">Very proud to introduce</p>
-              <h1 class="mb-8 text-center text-4xl font-bold text-white sm:text-5xl md:mb-12 md:text-6xl">Revolutionary
-                way to build the web</h1>
-
-              <!-- <div class="flex w-full flex-col gap-2.5 sm:flex-row sm:justify-center">
-              <a href="#" class="inline-block rounded-lg bg-pink-500 px-8 py-3 text-center text-sm font-semibold text-white outline-none ring-pink-300 transition duration-100 hover:bg-pink-600 focus-visible:ring active:bg-pink-700 md:text-base">Start now</a>
-    
-              <a href="#" class="inline-block rounded-lg bg-gray-200 px-8 py-3 text-center text-sm font-semibold text-gray-500 outline-none ring-pink-300 transition duration-100 hover:bg-gray-300 focus-visible:ring active:text-gray-700 md:text-base">Take tour</a>
-            </div> -->
-            </div>
-            <!-- text end -->
-          </section>
-        </div>
-      </div>
-      <div class="bg-white py-6 sm:py-8 lg:py-12">
-
-        <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-          <!-- text - start -->
-          <!-- <div class="mb-10 md:mb-16">
-            <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">app.lolilin.com</h2>
-
-            <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">This website is built using HTML,
-              CSS, JavaScript, PHP and is hosted by GitHub pages. Domain hosting services are provided by Cloudflare</p>
-          </div> -->
-          <!-- text - end -->
-
-          <div id="List" class="grid gap-4 sm:grid-cols-2 md:gap-8 xl:grid-cols-3">
-            <!-- feature - start -->
-            <!-- <div class="flex flex-col rounded-lg border p-4 md:p-6">
-            <h3 class="mb-2 text-lg font-semibold md:text-xl">「LIN」Records</h3>
-            <p style="display: flex;" class="mb-4 text-gray-500">
-              <img style="object-fit:cover;width: 6rem;height: 6rem;"
-                src="https://avatars.githubusercontent.com/oa/2190240?s=240&u=62c460c155b850cf6b38b901a1310c67c1df52e2&v=4"
-                alt="">
-              <span style="margin: 10px;">Filler text is dummy text which has no meaning however looks very similar to
-                real text.</span>
-            </p>
-            <a href="/records"
-              class="mt-auto font-bold text-pink-500 transition duration-100 hover:text-pink-600 active:text-indigo-700">Open</a>
-          </div> -->
-            <!-- feature - end -->
-          </div>
-        </div>
-
-        <div class="bg-white py-6 sm:py-8 lg:py-12">
-          <!-- <div class="flex flex-col items-center border-gray-400 border-t pt-6 h-4"></div> -->
-
-          <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-            <!-- text - start -->
-            <div class="bg-white py-6 sm:py-8 lg:py-12">
-              <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-                <p class="mb-2 text-center font-semibold text-indigo-500 md:mb-3 lg:text-lg">Private</p>
-            
-                <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">lolilin's online app</h2>
-            
-                <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">To use this app, you must log in to your account and your actions will be recorded to the server.</p>
+        </header>
+        <div class="bg-white pt-6 sm:pt-8 lg:pt-12">
+            <!-- banner - start -->
+            <div class="mx-auto max-w-screen-2xl px-4 pb-4 md:px-8">
+              <div class="relative flex flex-wrap rounded-lg bg-indigo-500 px-4 py-3 shadow-lg sm:flex-nowrap sm:items-center sm:justify-center sm:gap-3 sm:pr-8 md:px-8">
+                <div class="order-1 mb-2 inline-block w-11/12 max-w-screen-sm text-sm text-white sm:order-none sm:mb-0 sm:w-auto md:text-base">This is a section of some simple filler text, also known as placeholder text.</div>
+          
+                <a href="#" class="order-last inline-block w-full whitespace-nowrap rounded-lg bg-indigo-600 px-4 py-2 text-center text-xs font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-700 focus-visible:ring active:bg-indigo-800 sm:order-none sm:w-auto md:text-sm">Learn more</a>
+          
+                <!-- close button - start -->
+                <div class="order-2 flex w-1/12 items-start justify-end sm:absolute sm:right-0 sm:order-none sm:mr-2 sm:w-auto xl:mr-3">
+                  <button type="button" class="text-white transition duration-100 hover:text-indigo-100 active:text-indigo-200">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 xl:h-6 xl:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                  </button>
+                </div>
+                <!-- close button - end -->
               </div>
             </div>
-            <!-- text - end -->
-            <div id="Private" class="grid gap-4 sm:grid-cols-2 md:gap-8 xl:grid-cols-3">
-            </div>
+            <!-- banner - end -->
           </div>
-        </div>
+        <main>
+            <div class="bg-white py-6 sm:py-8 lg:py-12">
+                <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+                    <div class="flex overflow-hidden rounded-lg bg-gray-100">
+                        <!-- image - start -->
+                        <div class="relative hidden bg-gray-200 sm:block sm:w-1/3 lg:w-1/2">
+                            <img src="https://images.unsplash.com/photo-1604076913837-52ab5629fba9?auto=format&q=75&fit=crop&w=750"
+                                loading="lazy" alt="Photo by mymind"
+                                class="absolute inset-0 h-full w-full object-cover object-center" />
+                        </div>
+                        <!-- image - end -->
 
-        <chat class="bg-white py-6 sm:py-8 lg:py-12">
-          <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
-            <div class="rounded-lg bg-gray-100 px-4 py-6 md:py-8 lg:py-12">
+                        <!-- content - start -->
+                        <div class="flex w-full items-center p-4 sm:w-2/3 sm:p-8 lg:w-1/2 lg:pl-10">
+                            <div class="flex w-full flex-col items-center sm:block">
+                                <div class="mb-4 sm:mb-8">
+                                    <h2
+                                        class="text-center text-xl font-bold text-indigo-500 sm:text-left sm:text-2xl lg:text-3xl">
+                                        Get the latest updates
+                                    </h2>
+                                    <p class="text-center text-gray-500 sm:text-left">
+                                        Sign up for our newsletter
+                                    </p>
+                                </div>
 
-              <!-- <div class="flex flex-col items-center border-t pt-6"></div> -->
+                                <form class="mb-3 flex w-full max-w-md gap-2 sm:mb-5">
+                                    <input placeholder="Email"
+                                        class="bg-gray-white w-full flex-1 rounded border border-gray-300 px-3 py-2 text-gray-800 placeholder-gray-400 outline-none ring-indigo-300 transition duration-100 focus:ring" />
 
-              <main style="margin:10px">
-                <script src="https://giscus.app/client.js" data-repo="lolilin/app.lolilin" data-repo-id="R_kgDOJfj-7g"
-                  data-category="General" data-category-id="DIC_kwDOJfj-7s4CWUH0" data-mapping="og:title"
-                  data-strict="0" data-reactions-enabled="1" data-emit-metadata="1" data-input-position="top" data-loading="lazy"
-                  data-theme="https://app.lolilin.com/static/css/giscus.css" data-lang="en" crossorigin="anonymous"
-                  async>
-                  </script>
-              </main>
+                                    <button
+                                        class="inline-block rounded bg-indigo-500 px-8 py-2 text-center text-sm font-semibold text-white outline-none ring-indigo-300 transition duration-100 hover:bg-indigo-600 focus-visible:ring active:bg-indigo-700 md:text-base">
+                                        Send
+                                    </button>
+                                </form>
 
-              <div class="py-1 text-center text-sm text-gray-400">© 2023 - lolilin. All rights reserved.</div>
-
+                                <p class="text-center text-xs text-gray-400 sm:text-left">
+                                    By signing up to our newsletter you agree to our
+                                    <a href="#"
+                                        class="underline transition duration-100 hover:text-indigo-500 active:text-indigo-600">Term
+                                        of Service</a>
+                                    and
+                                    <a href="#"
+                                        class="underline transition duration-100 hover:text-indigo-500 active:text-indigo-600">Privacy
+                                        Policy</a>.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- content - end -->
+                    </div>
+                </div>
             </div>
-          </div>
-        </chat>
-    </main>
-  </section>
+
+            <chat class="bg-white py-6 sm:py-8 lg:py-12">
+                <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+                    <div class="rounded-lg bg-gray-100 px-4 py-6 md:py-8 lg:py-12">
+
+                        <!-- <div class="flex flex-col items-center border-t pt-6"></div> -->
+
+                        <main style="margin:10px">
+                            <script src="https://giscus.app/client.js" data-repo="lolilin/app.lolilin"
+                                data-repo-id="R_kgDOJfj-7g" data-category="General"
+                                data-category-id="DIC_kwDOJfj-7s4CWUH0" data-mapping="og:title" data-strict="0"
+                                data-reactions-enabled="1" data-emit-metadata="1" data-input-position="top"
+                                data-loading="lazy" data-theme="https://app.lolilin.com/static/css/giscus.css"
+                                data-lang="en" crossorigin="anonymous" async>
+                                </script>
+                        </main>
+
+                        <div class="py-1 text-center text-sm text-gray-400">© 2023 - <a class="hover:text-pink-200" href="https://lolilin.com">lolilin</a>. All rights reserved.</div>
+
+                    </div>
+                </div>
+            </chat>
+        </main>
+    </section>
 </body>
 
 </html>
