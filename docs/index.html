@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta property="og:title" content="AppIndex">
+    <title>App's | &#x767D;&#x6FAA;</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $.ajax({
+            url: 'https://api.mio.ski/app/docs/list',
+            type: 'GET',
+            dataType: 'json',
+        })
+            .done(function (dat) {
+                console.log(dat);
+                let objectApi = dat;
+                for (let item in objectApi) {
+                    let objectItem = dat[item];
+                    let objectList = $('#List');
+                    let objectPrivate = $('#Private');
+
+                    if (objectItem.order >= 1000) {
+                        if (objectItem.icon == null) {
+                            objectPrivate.append('<!-- feature - start --><div class="flex flex-col rounded-lg border p-4 md:p-6"><h3 class="mb-2 text-lg font-semibold md:text-xl">' + objectItem.title + '</h3><p style="display: flex;" class="mb-4 text-gray-500"><span style="margin: 10px;">' + objectItem.describes + '</span></p><a href="' + objectItem.url + '" class="mt-auto font-bold text-pink-500 transition duration-100 hover:text-pink-600 active:text-indigo-700">Open</a></div><!-- feature - end -->');
+                        } else objectPrivate.append('<!-- feature - start --><div class="flex flex-col rounded-lg border p-4 md:p-6"><h3 class="mb-2 text-lg font-semibold md:text-xl">' + objectItem.title + '</h3><p style="display: flex;" class="mb-4 text-gray-500"><img style="object-fit:cover;width: 5rem;height: 5rem;" src="' + objectItem.icon + '" alt=""><span style="margin: 10px;">' + objectItem.describes + '</span></p><a href="' + objectItem.url + '" class="mt-auto font-bold text-pink-500 transition duration-100 hover:text-pink-600 active:text-indigo-700">Open</a></div><!-- feature - end -->');
+                    } else {
+                        if (objectItem.icon == null) {
+                            objectList.append('<!-- feature - start --><div class="flex flex-col rounded-lg border p-4 md:p-6"><h3 class="mb-2 text-lg font-semibold md:text-xl">' + objectItem.title + '</h3><p style="display: flex;" class="mb-4 text-gray-500"><span style="margin: 10px;">' + objectItem.describes + '</span></p><a href="' + objectItem.url + '" class="mt-auto font-bold text-pink-500 transition duration-100 hover:text-pink-600 active:text-indigo-700">Open</a></div><!-- feature - end -->');
+                        } else objectList.append('<!-- feature - start --><div class="flex flex-col rounded-lg border p-4 md:p-6"><h3 class="mb-2 text-lg font-semibold md:text-xl">' + objectItem.title + '</h3><p style="display: flex;" class="mb-4 text-gray-500"><img style="object-fit:cover;width: 5rem;height: 5rem;" src="' + objectItem.icon + '" alt=""><span style="margin: 10px;">' + objectItem.describes + '</span></p><a href="' + objectItem.url + '" class="mt-auto font-bold text-pink-500 transition duration-100 hover:text-pink-600 active:text-indigo-700">Open</a></div><!-- feature - end -->');
+                    }
+                };
+                document.getElementById('load').remove();
+                document.getElementById('main').classList.toggle('hide')
+            })
+            .fail(function () {
+                alert('api server request timed out');
+            });
+    </script>
+    <style>
+        .hide {
+            display: none;
+        }
+    </style>
+    <script>
+        function Github(command) {
+            if (command == 'Signup') {
+                window.open("https://github.com/join?return_to=%2Flogin%2Foauth%2Fauthorize%3Fclient_id%3D54a9c9d3359e7b7ed2ff%26redirect_uri%3Dhttps%253A%252F%252Fapp.lolilin.com%252Fapi%252Foauth%252Fgithub%26scope%3Dpublic_repo&source=oauth", "_blank", "menubar=no,toolbar=no,status=no,scrollbars=yes,top=250,left=450,width=1000px,height=600px")
+            } else if (command == 'Signin') {
+                window.open("https://github.com/login/oauth/authorize?client_id=54a9c9d3359e7b7ed2ff&redirect_uri=https://app.lolilin.com/api/oauth/github&scope=public_repo", "_blank", "menubar=no,toolbar=no,status=no,scrollbars=yes,top=200,left=700,width=600px,height=700px")
+            }
+        }
+    </script>
+    <!-- <link rel="shortcut icon" href="https://app.lolilin.com/static/img/herta.gif" type="image/x-icon"> -->
+</head>
+
+<body>
+    <load id="load">
+        <div id="reload" style="width: 100%;height: 100vh;position: relative;">
+            <img style="border-radius: 100%;position: absolute;width: 4rem;top: -2rem;left: 0;right: 0;bottom: 0;margin: auto;"
+                src="https://app.lolilin.com/static/img/herta.gif">
+        </div>
+    </load>
+
+    <section id="main" class="hide d-flex flex-column justify-content-center">
+        <header>
+            <div style="margin: 10px;" class="bg-white">
+                <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+                    <header class="flex items-center justify-between py-4 md:py-8">
+                        <!-- logo - start -->
+                        <a href="/"
+                            class="text-black-800 inline-flex items-center gap-2.5 text-2xl font-bold md:text-3xl"
+                            aria-label="logo">
+                            <img style="width: 60px;"
+                                src="https://avatars.githubusercontent.com/oa/2190240?s=240&u=62c460c155b850cf6b38b901a1310c67c1df52e2&v=4"
+                                alt="">
+                            「白澪~」Document
+                        </a>
+                        <!-- logo - end -->
+                    </header>
+                </div>
+            </div>
+        </header>
+
+
+        <main style="margin:10px">
+            
+            <div class="bg-white py-6 sm:py-8 lg:py-12">
+
+                <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+
+                    <div id="List" class="grid gap-4 sm:grid-cols-2 md:gap-8 xl:grid-cols-3">
+
+                    </div>
+                </div>
+
+                <div class="bg-white py-6 sm:py-8 lg:py-12">
+                    <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+                        <!-- text - start -->
+                        <div class="bg-white py-6 sm:py-8 lg:py-12">
+                            <div class="mx-auto max-w-screen-2xl px-4 md:px-8">
+                                <p class="mb-2 text-center font-semibold text-indigo-500 md:mb-3 lg:text-lg">Other</p>
+
+                                <h2 class="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
+                                    lolilin's third party doc</h2>
+
+                                <p class="mx-auto max-w-screen-md text-center text-gray-500 md:text-lg">These documents are unofficial, and lolilin has built documents for other apps.It is not possible to update in real time.</p>
+                            </div>
+                        </div>
+                        <!-- text - end -->
+                        <div id="Private" class="grid gap-4 sm:grid-cols-2 md:gap-8 xl:grid-cols-3">
+                        </div>
+                    </div>
+                </div>
+                <div class="py-1 text-center text-sm text-gray-400">© 2023 - <a class="hover:text-pink-200" href="https://lolilin.com">lolilin</a>. All rights reserved.</div>
+            </main>
+    </section>
+</body>
+
+</html>
