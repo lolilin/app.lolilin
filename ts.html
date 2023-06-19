@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TeamSpeak</title>
+    <link rel="shortcut icon"
+        href="https://static.wikia.nocookie.net/minecraft_zh_gamepedia/images/c/c0/Make_Stuff_icon_%28MCE%29.png"
+        type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <style>
+        @font-face {
+            font-family: 'Mona Sans';
+            src:
+                url(https://s1.lolis.fyi/font/Mona-Sans.ttf);
+            font-weight: 200 900;
+            font-stretch: 75% 125%;
+        }
+
+        #app {
+            font-family: "Mona Sans", "Mona Sans Fallback", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !important;
+        }
+        .overflow-hid::-webkit-scrollbar {
+            width: 0px;
+            height: 0px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="flex flex-col w-screen items-center py-10">
+            <h1>Download TeamSpeak And 中文汉化包</h1>
+            {{ hello }}
+            <!-- UserTing -->
+            <div class="text-2xl font-bold mt-8">Suitable for you TeamSpeak Client</div>
+            <div class="text-gray-300 text-sm mb-8">You system is {{ system }}, and you language is {{ userLanguage }}</div>
+
+
+
+            <a href="https://cdn.lolis.fyi/files/ts/TeamSpeak3-Client-win32-3.6.0.exe" v-if="system == 'win32'" class="group text-gray-400 hover:text-black cursor-crosshair shadow-sm hover:shadow-md hover:bg-neutral-50 flex justify-between items-center p-5 mx-5 mt-3 w-[calc(100vw-3rem)] sm:w-[38rem] md:w-[45rem] h-14 rounded-lg border-gray-200 hover:border-gray-300 border transition-all ease-linear">
+                <div class="flex items-center max-w-max w-max">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-7 h-7 transition-all ease-linear duration-[20ms]">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3">
+                        </path>
+                    </svg>
+                    <div class="px-2 flex flex-col">
+                        <div class="text-black font-medium">TeamSpeak3 Client WindowsX32 3.6.0</div>
+                        <div class="text-xs text-gray-300 whitespace-nowrap overflow-hid overflow-auto max-w-[18rem] sm:max-w-sm">SHA256 1fe9d240f94893f63fd61e3270c5ac23dcbcedb2a6eb840211e4aee7135a8ab0</div>
+                    </div>
+                </div>
+                <span class="transition-transform text-xl pt-2 group-hover:translate-x-[2px]">→</span>
+            </a>
+            <a href="https://cdn.lolis.fyi/files/ts/TeamSpeak3-Client-win64-3.6.0.exe" v-if="system == 'win64'" class="group text-gray-400 hover:text-black cursor-crosshair shadow-sm hover:shadow-md hover:bg-neutral-50 flex justify-between items-center p-5 mx-5 mt-3 w-[calc(100vw-3rem)] sm:w-[38rem] md:w-[45rem] h-14 rounded-lg border-gray-200 hover:border-gray-300 border transition-all ease-linear">
+                <div class="flex items-center max-w-max w-max">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-7 h-7 transition-all ease-linear duration-[20ms]">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3">
+                        </path>
+                    </svg>
+                    <div class="px-2 flex flex-col">
+                        <div class="text-black font-medium">TeamSpeak3 Client WindowsX64 3.6.0</div>
+                        <div class="text-xs text-gray-300 whitespace-nowrap overflow-hid overflow-auto max-w-[18rem] sm:max-w-sm">SHA256 2752de74add856b8c8e0db9fedd2c2e12fa5c47226feca4e37135c4680f62ac3</div>
+                    </div>
+                </div>
+                <span class="transition-transform text-xl pt-2 group-hover:translate-x-[2px]">→</span>
+            </a>
+            <a href="https://cdn.lolis.fyi/files/ts/TeamSpeak3-Client-macosx-3.6.0.dmg" v-if="system == 'macos'" class="group text-gray-400 hover:text-black cursor-crosshair shadow-sm hover:shadow-md hover:bg-neutral-50 flex justify-between items-center p-5 mx-5 mt-3 w-[calc(100vw-3rem)] sm:w-[38rem] md:w-[45rem] h-14 rounded-lg border-gray-200 hover:border-gray-300 border transition-all ease-linear">
+                <div class="flex items-center max-w-max w-max">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-7 h-7 transition-all ease-linear duration-[20ms]">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3">
+                        </path>
+                    </svg>
+                    <div class="px-2 flex flex-col">
+                        <div class="text-black font-medium">TeamSpeak3 Client MacOSX 3.6.0</div>
+                        <div class="text-xs text-gray-300 whitespace-nowrap overflow-hid overflow-auto max-w-[18rem] sm:max-w-sm">SHA256 9347cbb4567033f61d6cfc2b78b077bc443cabff8999392e8dafe058c695b2aa</div>
+                    </div>
+                </div>
+                <span class="transition-transform text-xl pt-2 group-hover:translate-x-[2px]">→</span>
+            </a>
+            <a href="https://cdn.lolis.fyi/files/ts/TeamSpeak3-Client-linux_amd64-3.6.0.run" v-if="system == 'liunx'" class="group text-gray-400 hover:text-black cursor-crosshair shadow-sm hover:shadow-md hover:bg-neutral-50 flex justify-between items-center p-5 mx-5 mt-3 w-[calc(100vw-3rem)] sm:w-[38rem] md:w-[45rem] h-14 rounded-lg border-gray-200 hover:border-gray-300 border transition-all ease-linear">
+                <div class="flex items-center max-w-max w-max">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-7 h-7 transition-all ease-linear duration-[20ms]">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3">
+                        </path>
+                    </svg>
+                    <div class="px-2 flex flex-col">
+                        <div class="text-black font-medium">TeamSpeak3 Client LinuxAmd64 3.6.0</div>
+                        <div class="text-xs text-gray-300 whitespace-nowrap overflow-hid overflow-auto max-w-[18rem] sm:max-w-sm">SHA256 65b1259c5a1099776d091f656fa78ecf874ccd2c297e30b50ef1b755b0e84840</div>
+                    </div>
+                </div>
+                <span class="transition-transform text-xl pt-2 group-hover:translate-x-[2px]">→</span>
+            </a>
+            
+
+            <a href="Chinese_Translation_zh-CN.ts3_translation" v-if="userLanguage == 'zh'" class="group text-gray-400 hover:text-black cursor-crosshair shadow-sm hover:shadow-md hover:bg-neutral-50 flex justify-between items-center p-5 mx-5 mt-3 w-[calc(100vw-3rem)] sm:w-[38rem] md:w-[45rem] h-14 rounded-lg border-gray-200 hover:border-gray-300 border transition-all ease-linear">
+                <div class="flex items-center max-w-max w-max">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-7 h-7 transition-all ease-linear duration-[20ms]">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3">
+                        </path>
+                    </svg>
+                    <div class="px-2 flex flex-col">
+                        <div class="text-black font-medium">TeamSpeak3 Client 汉化包</div>
+                        <div class="text-xs text-gray-300 whitespace-nowrap overflow-hid overflow-auto max-w-[18rem] sm:max-w-sm">SHA256 7309c62000915bec3c0987b8d8f0f1482557f94140b1e359c8196cded92f3f88</div>
+                    </div>
+                </div>
+                <span class="transition-transform text-xl pt-2 group-hover:translate-x-[2px]">→</span>
+            </a>
+            
+
+            
+            
+            <!-- EveryThing -->
+            <div class="text-2xl font-bold mt-24">Evry TeamSpeak Client</div>
+            <!-- One Object Start -->
+            <div class="cursor-pointer font-semibold uppercase flex justify-between items-start mt-6 w-[calc(100vw-3rem)] sm:w-[38rem] md:w-[45rem]">
+                windows
+            </div>
+            <a href="https://cdn.lolis.fyi/files/ts/TeamSpeak3-Client-win32-3.6.0.exe" class="group text-gray-400 hover:text-black cursor-crosshair shadow-sm hover:shadow-md hover:bg-neutral-50 flex justify-between items-center p-5 mx-5 mt-3 w-[calc(100vw-3rem)] sm:w-[38rem] md:w-[45rem] h-14 rounded-lg border-gray-200 hover:border-gray-300 border transition-all ease-linear">
+                <div class="flex items-center max-w-max w-max">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-7 h-7 transition-all ease-linear duration-[20ms]">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3">
+                        </path>
+                    </svg>
+                    <div class="px-2 flex flex-col">
+                        <div class="text-black font-medium">TeamSpeak3 Client WindowsX32 3.6.0</div>
+                        <div class="text-xs text-gray-300 whitespace-nowrap overflow-hid overflow-auto max-w-[18rem] sm:max-w-sm">SHA256 1fe9d240f94893f63fd61e3270c5ac23dcbcedb2a6eb840211e4aee7135a8ab0</div>
+                    </div>
+                </div>
+                <span class="transition-transform text-xl pt-2 group-hover:translate-x-[2px]">→</span>
+            </a>
+            <a href="https://cdn.lolis.fyi/files/ts/TeamSpeak3-Client-win64-3.6.0.exe" class="group text-gray-400 hover:text-black cursor-crosshair shadow-sm hover:shadow-md hover:bg-neutral-50 flex justify-between items-center p-5 mx-5 mt-3 w-[calc(100vw-3rem)] sm:w-[38rem] md:w-[45rem] h-14 rounded-lg border-gray-200 hover:border-gray-300 border transition-all ease-linear">
+                <div class="flex items-center max-w-max w-max">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-7 h-7 transition-all ease-linear duration-[20ms]">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3">
+                        </path>
+                    </svg>
+                    <div class="px-2 flex flex-col">
+                        <div class="text-black font-medium">TeamSpeak3 Client WindowsX64 3.6.0</div>
+                        <div class="text-xs text-gray-300 whitespace-nowrap overflow-hid overflow-auto max-w-[18rem] sm:max-w-sm">SHA256 2752de74add856b8c8e0db9fedd2c2e12fa5c47226feca4e37135c4680f62ac3</div>
+                    </div>
+                </div>
+                <span class="transition-transform text-xl pt-2 group-hover:translate-x-[2px]">→</span>
+            </a>
+            <!-- The End -->
+
+            <!-- One Object Start -->
+            <div class="cursor-pointer font-semibold uppercase flex justify-between items-start mt-14 w-[calc(100vw-3rem)] sm:w-[38rem] md:w-[45rem]">
+                mac os
+            </div>
+            <a href="https://cdn.lolis.fyi/files/ts/TeamSpeak3-Client-macosx-3.6.0.dmg" class="group text-gray-400 hover:text-black cursor-crosshair shadow-sm hover:shadow-md hover:bg-neutral-50 flex justify-between items-center p-5 mx-5 mt-3 w-[calc(100vw-3rem)] sm:w-[38rem] md:w-[45rem] h-14 rounded-lg border-gray-200 hover:border-gray-300 border transition-all ease-linear">
+                <div class="flex items-center max-w-max w-max">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-7 h-7 transition-all ease-linear duration-[20ms]">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3">
+                        </path>
+                    </svg>
+                    <div class="px-2 flex flex-col">
+                        <div class="text-black font-medium">TeamSpeak3 Client MacOSX 3.6.0</div>
+                        <div class="text-xs text-gray-300 whitespace-nowrap overflow-hid overflow-auto max-w-[18rem] sm:max-w-sm">SHA256 9347cbb4567033f61d6cfc2b78b077bc443cabff8999392e8dafe058c695b2aa</div>
+                    </div>
+                </div>
+                <span class="transition-transform text-xl pt-2 group-hover:translate-x-[2px]">→</span>
+            </a>
+            <!-- The End -->
+            
+            <!-- One Object Start -->
+            <div class="cursor-pointer font-semibold uppercase flex justify-between items-start mt-14 w-[calc(100vw-3rem)] sm:w-[38rem] md:w-[45rem]">
+                liunx
+            </div>
+            <a href="https://cdn.lolis.fyi/files/ts/TeamSpeak3-Client-linux_amd64-3.6.0.run" class="group text-gray-400 hover:text-black cursor-crosshair shadow-sm hover:shadow-md hover:bg-neutral-50 flex justify-between items-center p-5 mx-5 mt-3 w-[calc(100vw-3rem)] sm:w-[38rem] md:w-[45rem] h-14 rounded-lg border-gray-200 hover:border-gray-300 border transition-all ease-linear">
+                <div class="flex items-center max-w-max w-max">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-7 h-7 transition-all ease-linear duration-[20ms]">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3">
+                        </path>
+                    </svg>
+                    <div class="px-2 flex flex-col">
+                        <div class="text-black font-medium">TeamSpeak3 Client LinuxAmd64 3.6.0</div>
+                        <div class="text-xs text-gray-300 whitespace-nowrap overflow-hid overflow-auto max-w-[18rem] sm:max-w-sm">SHA256 65b1259c5a1099776d091f656fa78ecf874ccd2c297e30b50ef1b755b0e84840</div>
+                    </div>
+                </div>
+                <span class="transition-transform text-xl pt-2 group-hover:translate-x-[2px]">→</span>
+            </a>
+            <!-- The End -->
+
+            <!-- ToolsThing -->
+            <div class="text-2xl font-bold mt-24">TeamSpeak Client Tools</div>
+            <!-- One Object Start -->
+            <div class="cursor-pointer font-semibold uppercase flex justify-between items-start mt-6 w-[calc(100vw-3rem)] sm:w-[38rem] md:w-[45rem]">
+                language
+            </div>
+            <a href="Chinese_Translation_zh-CN.ts3_translation" class="group text-gray-400 hover:text-black cursor-crosshair shadow-sm hover:shadow-md hover:bg-neutral-50 flex justify-between items-center p-5 mx-5 mt-3 w-[calc(100vw-3rem)] sm:w-[38rem] md:w-[45rem] h-14 rounded-lg border-gray-200 hover:border-gray-300 border transition-all ease-linear">
+                <div class="flex items-center max-w-max w-max">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-7 h-7 transition-all ease-linear duration-[20ms]">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3">
+                        </path>
+                    </svg>
+                    <div class="px-2 flex flex-col">
+                        <div class="text-black font-medium">TeamSpeak3 Client 汉化包</div>
+                        <div class="text-xs text-gray-300 whitespace-nowrap overflow-hid overflow-auto max-w-[18rem] sm:max-w-sm">SHA256 7309c62000915bec3c0987b8d8f0f1482557f94140b1e359c8196cded92f3f88</div>
+                    </div>
+                </div>
+                <span class="transition-transform text-xl pt-2 group-hover:translate-x-[2px]">→</span>
+            </a>
+            <!-- The End -->
+
+
+        </div>
+        <div class="my-10"></div>
+
+    </div>
+</body>
+
+<script>
+    const { createApp, defineComponent, computed, ref } = Vue
+
+    const MyComponent = defineComponent({
+        setup() {
+            // 定义响应式变量
+            const hello = ref("Hello World!");
+
+            const system = ref(null);
+
+            let userAgent = navigator.userAgent;
+
+            if(navigator.platform.indexOf("Win") !== -1) {
+                if (userAgent.indexOf('WOW64') !== -1 || userAgent.indexOf('Win64') !== -1) {
+                    system.value = 'win64';
+                } else {
+                    system.value = 'win32';
+                }
+            }
+            
+
+            // 判断用户是否使用 Mac 操作系统
+            if(navigator.platform.indexOf("Mac") !== -1) {
+                system.value = 'macos';
+            }
+
+            // 判断用户是否使用 Linux 操作系统
+            if(navigator.platform.indexOf("Linux") !== -1) {
+                system.value = 'liunx';
+            }
+
+            const userLanguage = ref(navigator.language.substr(0, 2));
+
+
+            return {
+                hello,
+                system,
+                userLanguage
+            }
+        }
+    })
+
+
+    const app = createApp(MyComponent)
+    app.mount('#app')
+</script>
+
+</html>
